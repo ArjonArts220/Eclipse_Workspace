@@ -10,13 +10,13 @@
 
 #include <iostream>
 #include <string> //hiermee kan je zeggen: " string naam = 'arjon'; "
+#include <vector>
+#include <map>
 #include "Burrito.hpp"
 
 /*
 C++ les 2:
 
-vector:
-vector is een dynamisch array - komt dus op heap <vector> <--classe
 
 Mijnklasse a; //komt op stack
 Mijnklasse *b = new Mijnklasse; //komt op heap en is altijd een pointer, dus vergeet * niet
@@ -29,12 +29,14 @@ map in C++ is hetzelfde als hashmap in java
 using namespace std;
 
 void print();
+void vectorr();
 int tuna = 69;
 
 int main(){
     Burrito b;
     Burrito *bp = &b;
     (*bp).printCrap();
+    vectorr();
     return 0;
 }
 
@@ -62,30 +64,35 @@ void arrays(int arrayOne[], int *arrayTwo){
                                              //5, 6, 7
 }
 
+void vectorr(){
+	/*Een vector kun je vergelijken met een array, hier kunnen ook meerdere dingen in bewaard worden. Het
+	 *verschil is, is dat een vector altijd op de heap komt te staan. Verder hoef je de grootte van een
+	 *vector niet aan te geven, als je er een bij/af doet veranderd de grootte automatisch.
+	 *Format: vector<DataType> nameOfVector;*/
+	std::vector<int> myVector;
+
+	//myVector.push_back(value)                          ==> voegt een value toe aan het einde
+	//myVector.at(index)                                 ==> returnt element in de aangegeven index
+	//myVector.size()                                    ==> return de grote van de vector als een unsigned int
+	//myVector.begin()                                   ==> lees de eerste element van de vector (index = 0)
+	//myVector.insert(myVector.begin() + integer, value) ==> voegt element toe VOOR de aangegeven index
+	//myVector.erase(myVector.begin() + integer)         ==> verwijderd de element in de aangegeven positie
+	//myVector.clear()                                   ==> verwijderd alle elementen in vector
+	//myVector.empty()                                   ==> returnt boolean van als de vector leeg is.
+}
+
+void mapp(){
+	/*De map in C++ is hetzelfde als een HashMap in Java. Het heeft dus een key en een value, de key moet uniek
+	 *zijn en de value mag meerdere keren voorkomen.
+	 *Format: map<DataTypeKey, DataTypeValue> nameOfMap*/
+	std::map<int, std::string> myMap;
+}
+
 void pointers(int *pointer){
     /*Een pointer is een speciale variable die een adres vasthoud. Met het en-teken (&) krijg je het memory-adres van een variable.*/
     int fish = 6;
     int *fishPointer = &fish; //in fishpointer komt het adres van fish in te staan.
     *fishPointer = 66; //verander de fishvariable naar 66.
-}
-
-void classesAndObjectsAndContructors(){
-    /*Een klasse word gebruikt om functies en variable bij elkaar te doen
-      Een constructor word automatsch aangeroepen bij het aanmaken van het object, het heeft nooit een returnvalue. Een constructor begint altijd met de naam
-      van je klass
-    class myClass{
-        public: //alles onder public word automatisch public, public wil zeggen dat je de functie/var buiten die class kan uitvoeren/pakken
-            myClass(string name, int age){ //constructor
-            }
-            void functionName(){
-            }
-        private:
-            void awesomeName(){
-            }
-    };
-
-    myClass myClassObject;
-    myClassObject.functionName();*/
 }
 
 void functions(){
@@ -108,6 +115,4 @@ void functions(){
         cout << sizeof(a) << endl; //output is 1 (dus 1 byte)
 }
 
-void composition(){
 
-}
