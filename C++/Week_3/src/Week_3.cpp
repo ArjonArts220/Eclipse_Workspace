@@ -1,5 +1,5 @@
 //============================================================================
-// Name        : Week_2.cpp
+// Name        : Week_3.cpp
 // Author      : Arjon Arts
 // Version     :
 // Copyright   : Your copyright notice
@@ -9,6 +9,7 @@
 #include "Mobiel.hpp"
 #include "Sms.hpp"
 #include "Provider.hpp"
+#include "Samsung.hpp"
 
 #include <iostream>
 using namespace std;
@@ -38,9 +39,13 @@ int main() {
 	provider.addMobile(&mb2);
 	provider.addMobile(&mb3);
 
-	mb2.writeSms(1111, "T-10 ... 9 ... 8 ...");
-	mb1.writeSms(2222, "2 ... 1 ... Rakat is launched");
+	mb2.writeSms(1111, "aaaaaa");
+	mb1.writeSms(2222, "bbbbbb");
 
 	mb3.writeSms(mb3.getTelNr("Piet"), "Hallo Piet");
+
+	Samsung mb4("Arjon", "paars");
+	mb4.setKleur("lorange");
+	cout << mb4.getKleur() << endl;
 	return 0;
 }

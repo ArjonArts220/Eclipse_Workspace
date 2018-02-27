@@ -7,12 +7,14 @@
 //============================================================================
 
 /*The New Boston tutorial - 31*/
-
+using namespace std;
 #include <iostream>
 #include <string> //hiermee kan je zeggen: " string naam = 'arjon'; "
 #include <vector>
 #include <map>
 #include "Burrito.hpp"
+#include "Basisklas.hpp"
+#include "Afgeleideklas.hpp"
 
 /*
 C++ les 2:
@@ -26,17 +28,17 @@ map:
 map in C++ is hetzelfde als hashmap in java
 
 */
-using namespace std;
 
 void print();
 void vectorr();
 int tuna = 69;
 
 int main(){
-    Burrito b;
-    Burrito *bp = &b;
-    (*bp).printCrap();
-    vectorr();
+	Basisklas basis;
+	basis.functionA();
+
+	Afgeleideklas afge;
+	afge.functionC();
     return 0;
 }
 
