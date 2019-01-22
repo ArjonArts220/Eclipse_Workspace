@@ -1,0 +1,11 @@
+De package.json file zorgt voor een overzicht van alle gedownloade modules. Als je jouw
+project aan een andere 'engineer' geeft weet hij welke modules er gedownload moeten worden.
+De gedownloade modules komen onder 'dependencies' te staan. 
+
+Aanmaken:
+ - npm init
+
+Module downloaden:
+ //kijk op www.npmjs.com
+ - npm install module_naam -save //-save geeft aan dat je de modulenaam wilt opslaan in de package.json file
+

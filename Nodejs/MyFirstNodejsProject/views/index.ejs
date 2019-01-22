@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head></head>
+
+  <body>
+    <h1>This is a <%= title %></h1>
+
+    <form method="POST">
+      firstname:
+      <input type="text" name="firstname">
+      lastname:
+      <input type="text" name="lastname">
+
+      <input type="submit" value="Submit">
+    </form>
+
+    <% if (locals.firstname) { %>
+
+      <%= firstname %>
+      <%= lastname %>
+    <% } %>
+
+  </body>
+</html>
